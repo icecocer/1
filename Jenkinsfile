@@ -6,11 +6,21 @@ pipeline {
         echo 'update docker'
       }
     }
-    stage('hello') {
+    stage('show /opt') {
       steps {
         script {
           node {
             sh 'ls /opt/'
+          }
+        }
+
+      }
+    }
+    stage('update dokcer') {
+      steps {
+        script {
+          node {
+            sh 'sh /opt/dockerrun.sh'
           }
         }
 
