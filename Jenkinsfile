@@ -35,5 +35,13 @@ pipeline {
       }
      }
     }
+   post {
+        always {
+            junit '**/target/*.xml'
+        }
+        failure {
+            mail to: 543266565@qq.com, subject: 'The Pipeline failed :('
+        }
+    }
   }
 }
