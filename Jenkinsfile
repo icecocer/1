@@ -36,5 +36,10 @@ pipeline {
 
       }
     }
+    stage('time') {
+      steps {
+        timeout(time: 1, unit: 'SECONDS')
+      }
+    }
   }
 }
