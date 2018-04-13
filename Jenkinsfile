@@ -8,7 +8,7 @@ pipeline {
     }
     stage('show /opt') {
       parallel {
-        stage('show /opt') {
+        stage('1') {
           steps {
             script {
               node {
@@ -18,17 +18,22 @@ pipeline {
 
           }
         }
-        stage('show /') {
+        stage('2') {
           steps {
             echo 'test'
           }
         }
-        stage('2') {
+        stage('3') {
           steps {
             retry(count: 2) {
               sh 'ls /opt'
             }
 
+          }
+        }
+        stage('4') {
+          steps {
+            acceptGitLabMR(mergeCommitMessage: '123')
           }
         }
       }
