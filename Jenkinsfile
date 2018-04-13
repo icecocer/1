@@ -36,6 +36,7 @@ pipeline {
 
       }
     }
+  }
    post {
         always {
             junit '**/target/*.xml'
@@ -43,6 +44,5 @@ pipeline {
         failure {
             mail to: 543266565@qq.com, subject: 'The Pipeline failed'
         }
-    }
-  }
+    }  
 }
