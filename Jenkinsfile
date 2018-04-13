@@ -26,5 +26,12 @@ pipeline {
 
       }
     }
+    stage('test2') {
+      steps {
+        script {
+          node {
+            echo 'test2'
+     }
+    }
   }
 }
