@@ -31,9 +31,10 @@ pipeline {
         script {
           node {
             echo 'test2'
-       }
+          }
+        }
+
       }
-     }
     }
   }
 }
