@@ -23,6 +23,14 @@ pipeline {
             echo 'test'
           }
         }
+        stage('2') {
+          steps {
+            retry(count: 2) {
+              sh 'ls /opt'
+            }
+
+          }
+        }
       }
     }
     stage('update dokcer') {
