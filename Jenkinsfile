@@ -7,13 +7,22 @@ pipeline {
       }
     }
     stage('show /opt') {
-      steps {
-        script {
-          node {
-            sh 'ls /opt/'
+      parallel {
+        stage('show /opt') {
+          steps {
+            script {
+              node {
+                sh 'ls /opt/'
+              }
+            }
+
           }
         }
-
+        stage('show /') {
+          steps {
+            echo 'test'
+          }
+        }
       }
     }
     stage('update dokcer') {
