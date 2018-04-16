@@ -6,5 +6,15 @@ pipeline {
         echo 'update docker'
       }
     }
+    stage('hello') {
+      steps {
+        script {
+          node {
+            echo 'Hello World'
+          }
+        }
+
+      }
+    }
   }
 }
