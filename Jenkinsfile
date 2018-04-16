@@ -10,7 +10,7 @@ pipeline {
       steps {
         script {
           node {
-            echo 'ls /opt/'
+            sh 'ls /opt/'
           }
         }
 
