@@ -6,10 +6,5 @@ pipeline {
         echo 'update docker'
       }
     }
-    stage('update dockerfile') {
-      steps {
-        sh '/bin/bash /opt/dockerrun.sh'
-      }
-    }
   }
 }
