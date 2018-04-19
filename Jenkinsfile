@@ -18,11 +18,6 @@ pipeline {
 
           }
         }
-        stage('2') {
-          steps {
-            echo 'test'
-          }
-        }
         stage('3') {
           steps {
             retry(count: 2) {
@@ -71,7 +66,7 @@ pipeline {
     }
     stage('mail') {
       steps {
-        emailext(subject: '\'\'', body: '\'\'', to: '543266565@qq.com')
+        emailext(subject: '$DEFAULT_SUBJECT', body: 'SUCCESSFUL', to: '543266565@qq.com')
       }
     }
   }
