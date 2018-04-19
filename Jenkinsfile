@@ -66,7 +66,7 @@ pipeline {
     }
     stage('mail') {
       steps {
-        emailext(subject: '$DEFAULT_SUBJECT', body: 'SUCCESSFUL', to: '543266565@qq.com')
+        emailext(subject: '$DEFAULT_SUBJECT', body: 'SUCCESSFUL', to: '543266565@qq.com', postsendScript: '$DEFAULT_POSTSEND_SCRIPT')
       }
     }
   }
