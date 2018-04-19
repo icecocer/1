@@ -69,5 +69,10 @@ pipeline {
 
       }
     }
+    stage('mail') {
+      steps {
+        emailext(subject: '\'\'', body: '\'\'', to: '543266565@qq.com')
+      }
+    }
   }
 }
