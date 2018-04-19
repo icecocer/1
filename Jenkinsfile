@@ -69,10 +69,5 @@ pipeline {
 
       }
     }
-    stage('Email') {
-      steps {
-        mail(subject: '$DEFAULT_SUBJECT', body: '$DEFAULT_POSTSEND_SCRIPT', cc: '$DEFAULT_CONTENT', to: '543266565@qq.com', replyTo: '543266565@qq.com')
-      }
-    }
   }
 }
