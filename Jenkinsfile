@@ -33,7 +33,10 @@ pipeline {
         }
         stage('4') {
           steps {
-            acceptGitLabMR(mergeCommitMessage: '123')
+            node(label: 'node2') {
+              sh 'ls /opt/'
+            }
+
           }
         }
       }
